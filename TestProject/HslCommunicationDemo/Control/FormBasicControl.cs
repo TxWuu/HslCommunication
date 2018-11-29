@@ -97,5 +97,10 @@ namespace HslCommunicationDemo
             HslCommunication.BasicFramework.FormPopup popup = new HslCommunication.BasicFramework.FormPopup( "This is a test message!", Color.Blue, 5000 );
             popup.Show( );
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            userLantern4.LedState = checkBox1.Checked;
+        }
     }
 }
