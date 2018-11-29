@@ -64,6 +64,8 @@
             this.userVerticalProgress3 = new HslCommunication.Controls.UserVerticalProgress();
             this.userVerticalProgress5 = new HslCommunication.Controls.UserVerticalProgress();
             this.userVerticalProgress4 = new HslCommunication.Controls.UserVerticalProgress();
+            this.userLantern4 = new HslCommunication.Controls.UserLantern();
+            this.LED状态 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -162,6 +164,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.LED状态);
+            this.panel2.Controls.Add(this.userLantern4);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.userLantern3);
             this.panel2.Controls.Add(this.userLantern1);
@@ -470,6 +474,26 @@
             this.userVerticalProgress4.TabIndex = 40;
             this.userVerticalProgress4.Value = 50;
             // 
+            // userLantern4
+            // 
+            this.userLantern4.BackColor = System.Drawing.Color.Transparent;
+            this.userLantern4.Location = new System.Drawing.Point(197, 142);
+            this.userLantern4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userLantern4.Name = "userLantern4";
+            this.userLantern4.Size = new System.Drawing.Size(57, 55);
+            this.userLantern4.TabIndex = 30;
+            // 
+            // LED状态
+            // 
+            this.LED状态.AutoSize = true;
+            this.LED状态.Location = new System.Drawing.Point(261, 180);
+            this.LED状态.Name = "LED状态";
+            this.LED状态.Size = new System.Drawing.Size(89, 21);
+            this.LED状态.TabIndex = 31;
+            this.LED状态.Text = "checkBox1";
+            this.LED状态.UseVisualStyleBackColor = true;
+            this.LED状态.CheckedChanged += new System.EventHandler(this.LED状态_CheckedChanged);
+            // 
             // FormBasicControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -537,5 +561,7 @@
         private System.Windows.Forms.Label label10;
         private HslCommunication.Controls.UserDrum userDrum1;
         private HslCommunication.Controls.UserBottle userBottle1;
+        private System.Windows.Forms.CheckBox LED状态;
+        private HslCommunication.Controls.UserLantern userLantern4;
     }
 }

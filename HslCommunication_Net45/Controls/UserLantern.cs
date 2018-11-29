@@ -24,6 +24,10 @@ namespace HslCommunication.Controls
             DoubleBuffered = true;
             brush_lantern_background = new SolidBrush( color_lantern_background );
             pen_lantern_background = new Pen( color_lantern_background, 2f );
+
+            OnStateColor = new Color();
+            OffStateColor = new Color();
+
         }
 
         private void UserLantern_Load( object sender, EventArgs e )
@@ -54,6 +58,7 @@ namespace HslCommunication.Controls
         private Color color_lantern_background = Color.LimeGreen;                  // 按钮的背景颜色，包括边线颜色
         private Brush brush_lantern_background = null;                             // 按钮的背景画刷
         private Pen pen_lantern_background = null;                                 // 按钮的背景画笔
+        private bool lantern_state = false;
 
         #endregion
 
@@ -82,6 +87,42 @@ namespace HslCommunication.Controls
                 Invalidate( );
             }
         }
+
+        
+
+        /// <summary>
+        /// 获取或设置LED的开关量状态
+        /// </summary>
+        /// <returns>Bool</returns>
+        [Browsable(true)]
+        [Description("获取或设置LED的开关量状态")]
+        [Category("外观")]
+        [DefaultValue(typeof(bool),"false")]
+        public bool LanternState
+        {
+            get { return lantern_state; }
+            set
+            {
+                lantern_state = value;
+                LanternBackground = value ? OnStateColor : OffStateColor;
+            }
+        }
+        /// <summary>
+        /// 置位状态LED颜色
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [Browsable(true)]
+        [DefaultValue(typeof(Color), "LimeGreen")]
+        public Color OnStateColor;
+        /// <summary>
+        /// 复位位状态LED颜色
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [Browsable(true)]
+        [DefaultValue(typeof(Color), "Gray")]
+        public Color OffStateColor;
 
         #endregion
 
