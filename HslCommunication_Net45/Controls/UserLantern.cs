@@ -24,10 +24,6 @@ namespace HslCommunication.Controls
             DoubleBuffered = true;
             brush_lantern_background = new SolidBrush( color_lantern_background );
             pen_lantern_background = new Pen( color_lantern_background, 2f );
-            OnStateColor = new Color();
-            OffStateColor = new Color();
-            OnStateColor = Color.LimeGreen;
-            OffStateColor = Color.Gray;
         }
 
         private void UserLantern_Load( object sender, EventArgs e )
@@ -58,8 +54,6 @@ namespace HslCommunication.Controls
         private Color color_lantern_background = Color.LimeGreen;                  // 按钮的背景颜色，包括边线颜色
         private Brush brush_lantern_background = null;                             // 按钮的背景画刷
         private Pen pen_lantern_background = null;                                 // 按钮的背景画笔
-        private bool lantern_state = false;
-        
 
         #endregion
 
@@ -123,7 +117,6 @@ namespace HslCommunication.Controls
                 LanternBackground = lantern_state?OnStateColor:OffStateColor;
             }
         }
-
 
         #endregion
 
